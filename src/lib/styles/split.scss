@@ -1,0 +1,120 @@
+@import './mixins.scss';
+
+.split-main {
+  background: #030712;
+  color: #F9FAFB;
+  min-height: 100vh;
+  min-height: 100svh;
+
+  header {
+    padding: 12.5vh 0 7.5vh 0;
+    @include flex-center;
+    flex-direction: column;
+
+    h1 {
+      font-size: 1rem;
+      font-weight: 450;
+      margin: 0 0 -0.5rem 0;
+      color: #6B7280;
+    }
+    h2 {
+      margin: 0;
+      font-size: 25vw;
+      font-weight: 300;
+      font-family: "Roboto", sans-serif;
+
+      transition: 0.2s ease;
+
+      &.light {
+        color: #FCA5A5;
+      }
+
+      .milliseconds {
+        font-size: 0.5em;
+        color: #6B7280;
+      }
+    }
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10vw;
+    
+    button {
+      width: 6rem;
+      aspect-ratio: 1/1;
+      @include flex-center;
+      flex-direction: column;
+      gap: 4px;
+      font: inherit;
+      border-radius: 50%;
+
+      background: #111827;
+      border: 1px solid #374151;
+      color: white;
+    }
+
+    .buttons-left {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem; 
+
+      button:nth-of-type(2) {
+        width: 3rem;
+        height: 3rem;
+        transition: 0.2s;
+      }
+      .hidden {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .splits {
+    padding: 2rem 10vw;
+    .split {
+      border-top: 1px solid #1F2937;
+      padding: 1rem 0;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      transition: 0.1s ease;
+
+      h3 {
+        margin: 0;
+        font-weight: 400;
+      }
+      p {
+        margin: 0;
+        color: #9CA3AF;
+        font-family: "Roboto", sans-serif;
+        transition: 0.1s ease;
+      }
+
+      &:not(.checked) {
+        color: #6B7280;
+        p {
+          color: #6B7280;
+        }
+      }
+
+      &.light {
+        h3 {
+          color: #FCA5A5;
+        }
+        &:not(.checked) {
+          h3 {
+            opacity: 0.5;
+          }
+        }
+      }
+
+      &:last-of-type {
+        border-bottom: 1px solid #1F2937;
+      }
+    }
+  }
+}

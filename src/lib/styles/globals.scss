@@ -1,0 +1,80 @@
+@import './mixins.scss';
+
+@font-face {
+  font-family: General Sans;
+  src: url("/fonts/GeneralSans-Variable.ttf"), url("/fonts/GeneralSans-VariableItalic.ttf")
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'General Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.button {
+  font: inherit;
+
+  @include flex-center;
+  gap: 0.5rem;
+
+  border: 1px solid #e4e4e7;
+  background: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+
+  transition: 0.2s ease;
+
+  &:hover {
+    background: #f4f4f5;
+    cursor: pointer;
+  }
+
+  &.button-primary {
+    background: black;
+    color: white;
+
+    &:hover {
+      background: black;
+      opacity: 0.9;
+    }
+  }
+}
+
+.spinner {
+  animation-name: spin;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  @keyframes spin {
+    from { transform: rotate(0deg) }
+    to { transform: rotate(360deg) }
+  }
+}
+
+.input-label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.input {
+  font: inherit;
+  border: 1px solid #e4e4e7;
+  background: #F9FAFB;
+  padding: 0.75em;
+  border-radius: 8px;
+  flex: 1;
+
+  transition: 0.2s ease;
+
+  &:focus {
+    background: #E5E7EB;
+    outline: none;
+  }
+}
